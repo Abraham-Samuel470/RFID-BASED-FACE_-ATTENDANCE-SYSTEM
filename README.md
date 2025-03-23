@@ -125,8 +125,8 @@ Then, open **http://127.0.0.1:5000** in a web browser.
 ---
 ### 🎯 **Contributors**
 👤 **Your Name**  
-📧 your-email@example.com  
-🔗 [GitHub Profile](https://github.com/your-github)
+📧 samu2004@gmail.com  
+🔗 [GitHub Profile](https://github.com/Abraham-Samuel470/)
 
 📢 Feel free to contribute and improve the project! 🚀
 

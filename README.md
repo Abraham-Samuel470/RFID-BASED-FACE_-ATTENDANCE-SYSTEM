@@ -1,4 +1,4 @@
-# RFID-BASED-FACE_-ATTENDANCE-SYSTEM
+# RFID-BASED FACE RECOGNITION ATTENDANCE SYSTEM
 
 ## 📌 Project Overview
 This project is an **RFID and Face Recognition-based Attendance System** using **Arduino, Python, and MySQL**. It ensures **two-factor authentication** by verifying an RFID card and then matching the person's face before marking attendance.
@@ -10,6 +10,7 @@ This project is an **RFID and Face Recognition-based Attendance System** using *
 - **Buzzer** (For access feedback)
 - **LED Indicator** (Shows attendance confirmation)
 - **DS3231 RTC Module** (For real-time clock data)
+- **Micro SD Card Reader** (For attendance storage)
 - **Webcam** (For face recognition)
 
 ## 🔌 Pin Connections
@@ -46,6 +47,16 @@ This project is an **RFID and Face Recognition-based Attendance System** using *
 | SDA     | A4         |
 | SCL     | A5         |
 
+### **Micro SD Card Module → Arduino Uno**
+| SD Card Pin | Arduino Pin |
+|------------|------------|
+| CS         | 4          |
+| SCK        | 13         |
+| MOSI       | 11         |
+| MISO       | 12         |
+| VCC        | 5V         |
+| GND        | GND        |
+
 ## 📦 Required Libraries
 ### **Arduino Libraries**
 1. `Wire.h` (For I2C communication)
@@ -53,6 +64,7 @@ This project is an **RFID and Face Recognition-based Attendance System** using *
 3. `SPI.h` (For RFID communication)
 4. `MFRC522.h` (For RFID functionality)
 5. `RTClib.h` (For RTC functionality)
+6. `SD.h` (For Micro SD storage)
 
 ### **Python Libraries**
 1. `opencv-python` (For webcam access)
@@ -69,6 +81,7 @@ This project is an **RFID and Face Recognition-based Attendance System** using *
   - `LiquidCrystal_I2C`
   - `MFRC522`
   - `RTClib`
+  - `SD`
 
 ### **2. Install Required Python Packages**
 Run the following command in the terminal:
@@ -90,7 +103,7 @@ CREATE TABLE Attendance (
     id INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(50),
     RFID VARCHAR(20),
-    Time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    Timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
@@ -108,25 +121,33 @@ Then, open **http://127.0.0.1:5000** in a web browser.
 ## 📝 How It Works
 1. **Scan the RFID card** → Camera opens.
 2. **Face recognition starts** → If face matches the cardholder, attendance is recorded.
-3. **Attendance is logged into MySQL** and displayed on the web dashboard.
+3. **Attendance is logged into MySQL** and stored on the **Micro SD card**.
 4. **Buzzer and LED indicate success or failure**.
+5. **Data is viewable on the Web Dashboard**.
 
 ## 📷 Web Dashboard
 - Displays real-time attendance logs.
 - Uses **Bootstrap** for a clean UI.
 - Accessible at `http://127.0.0.1:5000`
 
-## ⚡ Future Enhancements
+## ⚡ Features & Future Enhancements
+✅ **Two-factor authentication** (RFID + Face Recognition)
+✅ **Micro SD Card support** (Offline attendance storage)
+✅ **Web dashboard for monitoring**
+✅ **Multiple attempts before rejection**
+✅ **Real-time timestamp recording**
+
+🔜 **Future Enhancements:**
 - **Live streaming** on the web dashboard.
 - **Admin panel** for user management.
-- **Multiple attempts before rejection**.
 - **Cloud database integration**.
+- **Support for multiple RFID readers**.
 
 ---
 ### 🎯 **Contributors**
 👤 **Your Name**  
 📧 samu2004@gmail.com  
-🔗 [GitHub Profile](https://github.com/Abraham-Samuel470/)
+🔗 [GitHub:Abraham-Samuel470](https://github.com/Abraham-Samuel470/)
 
 📢 Feel free to contribute and improve the project! 🚀
 

@@ -10,7 +10,6 @@ This project is an **RFID and Face Recognition-based Attendance System** using *
 - **Buzzer** (For access feedback)
 - **LED Indicator** (Shows attendance confirmation)
 - **DS3231 RTC Module** (For real-time clock data)
-- **Micro SD Card Reader** (For attendance storage)
 - **Webcam** (For face recognition)
 
 ## 🔌 Pin Connections
@@ -47,15 +46,6 @@ This project is an **RFID and Face Recognition-based Attendance System** using *
 | SDA     | A4         |
 | SCL     | A5         |
 
-### **Micro SD Card Module → Arduino Uno**
-| SD Card Pin | Arduino Pin |
-|------------|------------|
-| CS         | 4          |
-| SCK        | 13         |
-| MOSI       | 11         |
-| MISO       | 12         |
-| VCC        | 5V         |
-| GND        | GND        |
 
 ## 📦 Required Libraries
 ### **Arduino Libraries**
@@ -64,7 +54,7 @@ This project is an **RFID and Face Recognition-based Attendance System** using *
 3. `SPI.h` (For RFID communication)
 4. `MFRC522.h` (For RFID functionality)
 5. `RTClib.h` (For RTC functionality)
-6. `SD.h` (For Micro SD storage)
+
 
 ### **Python Libraries**
 1. `opencv-python` (For webcam access)
@@ -81,7 +71,7 @@ This project is an **RFID and Face Recognition-based Attendance System** using *
   - `LiquidCrystal_I2C`
   - `MFRC522`
   - `RTClib`
-  - `SD`
+
 
 ### **2. Install Required Python Packages**
 Run the following command in the terminal:
@@ -121,7 +111,7 @@ Then, open **http://127.0.0.1:5000** in a web browser.
 ## 📝 How It Works
 1. **Scan the RFID card** → Camera opens.
 2. **Face recognition starts** → If face matches the cardholder, attendance is recorded.
-3. **Attendance is logged into MySQL** and stored on the **Micro SD card**.
+3. **Attendance is logged into MySQL** and stored on the **Attendance Records**.
 4. **Buzzer and LED indicate success or failure**.
 5. **Data is viewable on the Web Dashboard**.
 
@@ -132,7 +122,6 @@ Then, open **http://127.0.0.1:5000** in a web browser.
 
 ## ⚡ Features & Future Enhancements
 ✅ **Two-factor authentication** (RFID + Face Recognition)
-✅ **Micro SD Card support** (Offline attendance storage)
 ✅ **Web dashboard for monitoring**
 ✅ **Multiple attempts before rejection**
 ✅ **Real-time timestamp recording**

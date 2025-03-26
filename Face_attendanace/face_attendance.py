@@ -23,11 +23,15 @@ except Exception as e:
 known_faces = {
     "c3d5382": {"name": "M.DHINAKARAN", "roll_no": "22351-EC-030"},
     "80381e85": {"name": "CH. SAI DINESH", "roll_no": "21351-EC-031"},
+    "a399362": {"name": "T.MURALI", "roll_no": "22351-EC-059"},
+    "83143129": {"name": "SK.NAGULMEERA", "roll_no": "21351-EC-053"},
 }
 
 face_encodings = {
     "M.DHINAKARAN": face_recognition.face_encodings(face_recognition.load_image_file("Dhinakaran.jpg"))[0],
     "CH. SAI DINESH": face_recognition.face_encodings(face_recognition.load_image_file("Dinesh.jpg"))[0],
+    "T.MURALI": face_recognition.face_encodings(face_recognition.load_image_file("T.Murali.jpg"))[0],
+    "SK.NAGULMEERA": face_recognition.face_encodings(face_recognition.load_image_file("Sk.Nagulmeera.jpg"))[0],
 }
 
 while True:
